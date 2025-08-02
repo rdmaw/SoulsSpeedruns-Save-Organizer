@@ -12,7 +12,7 @@ $(NAME):
 		mvn clean package; \
 		cp $(TARGET) $(NAME); \
 		echo ''; \
-		echo 'File created successfully. To run it, type "make run"'; \
+		echo 'File created successfully. To run it, type "make run".'; \
 	fi
 
 run: $(NAME)
@@ -23,16 +23,16 @@ clean:
 	@if [ -f $(NAME) ]; then \
 		echo 'Removing $(NAME)'; \
 		echo ''; \
-		mvn clean; rm $(NAME); \
+		mvn clean; \
+		rm $(NAME); \
 		echo ''; \
 		echo 'File removed successfully.'; \
-		echo 'If you also want to remove the repo, type "cd .. && rm -rf SoulsSpeedruns-Save-Organizer"'; \
 	else \
 		echo "$(NAME) doesn't exist. Nothing to remove."; \
 	fi
 
 help:
-	@echo 'Build SpeedSouls Save Organizer (for Linux systems):'
+	@echo 'SoulsSpeedruns-Save-Organizer by Kahmul (for Linux systems):'
 	@echo ''
 	@echo 'Note: Maven and a Java Development Kit (JDK) is required for the commands to work:'
 	@echo "    make          - Build the file if it doesn't exist"
