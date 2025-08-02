@@ -728,6 +728,8 @@ public class SaveList extends JList<SaveListEntry> implements ListSelectionListe
 		e.consume();
 		requestFocusInWindow();
 		handleSelection(e);
+		if (e.isPopupTrigger())
+			new SaveListContextMenu(this, e.getX(), e.getY());
 	}
 
 
