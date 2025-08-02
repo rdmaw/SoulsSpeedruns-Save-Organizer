@@ -6,30 +6,30 @@ TARGET=target/*-jar-with-dependencies.jar
 all: $(NAME)
 
 $(NAME):
-		@if [ ! -f $(NAME) ]; then \
-				echo 'Building $(NAME)...'; \
-				echo ''; \
-				mvn clean package; \
-				cp $(TARGET) $(NAME); \
-				echo ''; \
-				echo 'File created successfully. To run it, type "make run"'; \
-		fi
+	@if [ ! -f $(NAME) ]; then \
+		echo 'Building $(NAME)...'; \
+		echo ''; \
+		mvn clean package; \
+		cp $(TARGET) $(NAME); \
+		echo ''; \
+		echo 'File created successfully. To run it, type "make run"'; \
+	fi
 
 run: $(NAME)
-		@echo 'Running $(NAME)...';
-		@java --enable-native-access=ALL-UNNAMED -jar $(NAME)
+	@echo 'Running $(NAME)...';
+	@java --enable-native-access=ALL-UNNAMED -jar $(NAME)
 
 clean:
-		@if [ -f $(NAME) ]; then \
-				echo 'Removing $(NAME)'; \
-				echo ''; \
-				mvn clean; rm $(NAME); \
-				echo ''; \
-				echo 'File removed successfully.'; \
-				echo 'If you also want to remove the repo, type "cd .. && rm -rf SoulsSpeedruns-Save-Organizer"'; \
-		else \
-				echo "$(NAME) doesn't exist. Nothing to remove."; \
-		fi
+	@if [ -f $(NAME) ]; then \
+		echo 'Removing $(NAME)'; \
+		echo ''; \
+		mvn clean; rm $(NAME); \
+		echo ''; \
+		echo 'File removed successfully.'; \
+		echo 'If you also want to remove the repo, type "cd .. && rm -rf SoulsSpeedruns-Save-Organizer"'; \
+	else \
+		echo "$(NAME) doesn't exist. Nothing to remove."; \
+	fi
 
 help:
 	@echo 'Build SpeedSouls Save Organizer (for Linux systems):'
