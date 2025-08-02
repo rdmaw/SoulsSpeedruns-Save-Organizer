@@ -95,6 +95,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
+        <version>3.7.1</version>
 				<configuration>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
@@ -111,85 +112,6 @@
 						<goals>
 							<goal>single</goal>
 						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>com.akathist.maven.plugins.launch4j</groupId>
-				<artifactId>launch4j-maven-plugin</artifactId>
-				<version>2.4.1</version>
-				<executions>
-					<execution>
-						<id>l4j-gui</id>
-						<phase>package</phase>
-						<goals><goal>launch4j</goal></goals>
-						<configuration>
-							<headerType>gui</headerType>
-							<outfile>target/${project.name}.exe</outfile>
-							<icon>src/com/soulsspeedruns/organizer/images/SoulsSpeedrunsLogo64.ico</icon>
-							<jar>target/soulsspeedrunssaveorganizer-${project.version}-jar-with-dependencies.jar</jar>
-							<errTitle>${project.name}</errTitle>
-							<classPath>
-								<mainClass>com.soulsspeedruns.organizer.managers.OrganizerManager</mainClass>
-							</classPath>
-							<jre>
-								<path>JRE path (%VAR%)</path>
-								<minVersion>1.8</minVersion>
-							</jre>
-							<splash>
-							    <file>src/com/soulsspeedruns/organizer/images/Splash_Screen.bmp</file>
-								<waitForWindow>true</waitForWindow>
-							    <timeout>10</timeout>
-								<timeoutErr>true</timeoutErr>
-							  </splash>
-							<versionInfo>
-								<fileVersion>${project.version}</fileVersion>
-								<txtFileVersion>${project.version}</txtFileVersion>
-								<fileDescription>${project.name}</fileDescription>
-								<copyright>N/A</copyright>
-								<productVersion>${project.version}</productVersion>
-								<txtProductVersion>${project.version}</txtProductVersion>
-								<productName>${project.name}</productName>
-								<internalName>${project.name}</internalName>
-								<originalFilename>${project.name}.exe</originalFilename>
-							</versionInfo>
-						</configuration>
-					</execution>
-					<execution>
-						<id>l4j-gui-portable</id>
-						<phase>package</phase>
-						<goals><goal>launch4j</goal></goals>
-						<configuration>
-							<headerType>gui</headerType>
-							<outfile>target/${project.name} - Bundled.exe</outfile>
-							<icon>src/com/soulsspeedruns/organizer/images/SoulsSpeedrunsLogo64.ico</icon>
-							<jar>target/soulsspeedrunssaveorganizer-${project.version}-jar-with-dependencies.jar</jar>
-							<errTitle>${project.name}</errTitle>
-							<classPath>
-								<mainClass>com.soulsspeedruns.organizer.managers.OrganizerManager</mainClass>
-							</classPath>
-							<jre>
-								<path>./jre</path>
-							</jre>
-							<splash>
-							    <file>src/com/soulsspeedruns/organizer/images/Splash_Screen.bmp</file>
-								<waitForWindow>true</waitForWindow>
-							    <timeout>10</timeout>
-								<timeoutErr>true</timeoutErr>
-							  </splash>
-							<versionInfo>
-								<fileVersion>${project.version}</fileVersion>
-								<txtFileVersion>${project.version}</txtFileVersion>
-								<fileDescription>${project.name}</fileDescription>
-								<copyright>N/A</copyright>
-								<productVersion>${project.version}</productVersion>
-								<txtProductVersion>${project.version}</txtProductVersion>
-								<productName>${project.name}</productName>
-								<internalName>${project.name}</internalName>
-								<originalFilename>${project.name}.exe</originalFilename>
-							</versionInfo>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
