@@ -1,3 +1,44 @@
+I don't own this project, this fork merely adds:
+* Right-click mouse support on Linux systems, based on an [open PR by veeenu](https://github.com/Kahmul/SoulsSpeedruns-Save-Organizer/pull/17)
+* A Makefile to simplify the build and run process
+
+I've removed the Windows package since this is just a fix for Linux systems until the issue is resolved in the official repo. For Windows, use the [official build from upstream](https://github.com/Kahmul/SoulsSpeedruns-Save-Organizer/releases/tag/v1.6.0).
+
+Requires:
+* GNU Make
+* A Java Development Kit (JDK)
+* Maven
+
+Arch Linux:
+```bash
+sudo pacman -S make jdk-openjdk maven
+```
+
+Debian/Ubuntu:
+```bash
+sudo apt install make default-jdk maven
+```
+
+To build:
+```bash
+git clone https://github.com/rdmaw/SoulsSpeedruns-Save-Organizer.git
+cd SoulsSpeedruns-Save-Organizer/
+make run
+```
+
+To uninstall:
+```
+make clean
+cd ..
+rm -rf SoulsSpeedruns-Save-Organizer
+```
+
+To see the list of commands, cd into the cloned directory and run `make help`
+
+The original README begins below this line
+
+---
+
 # <img src="https://github.com/Kahmul/SoulsSpeedruns-Save-Organizer/blob/develop/src/com/soulsspeedruns/organizer/images/SoulsSpeedrunsLogo32.png" width="28px"/> SoulsSpeedruns - Save Organizer
 
 <p align="center">
